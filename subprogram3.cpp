@@ -3,6 +3,10 @@ using namespace std;
 int main(){
 void isidata(int a[], int *n);
 void printdata(int a[], int n);
+void cariData(int a[], int n, int cari);
+void cetakDataTerbesar(int a[], int n);
+void cetakDataRataRata(int a[], int n);
+void cetakDataTotal(int a[], int n);
     int data[10];
     int jml;
     isidata(data, &jml);
@@ -11,6 +15,9 @@ void printdata(int a[], int n);
     printdata(data, jml);
     int data_dicari=10;
     caridata(data,jml,data_dicari);
+    cetakDataTerbesar(data,jml);
+    cetakDataRataRata(data,jml);
+    cetakDataTotal(data,jml);
     return 0;
 }
 
@@ -46,4 +53,47 @@ void printdata(int a[], int n) {
     for (int i = 0; i < n; i++) {
         cout << a[i] << " ";
     }
+    cout<<endl;
 }
+
+void cetakDataTerbesar(int a[],int n){
+    if(n==0){
+        cout<<"array kosong"<<endl;
+        return 0;
+    }
+}
+
+int terbesar = a[0];
+for (int i = 1; i < n; i++) {
+    if (a[i] > terbesar) {
+        terbesar = a[i];
+        }
+    }
+cout<<"data terbesar : "<<terbesar<<endl;
+
+void cetakDataRataRata(int a[],int n){
+    if(n==0){
+        cout<<"array kosong"<<endl;
+        return;
+    }
+}
+
+int total=0;
+for(int i=0; i<n; i++){
+    total +=a[i];
+}
+double rataRata=static_cast<double>(total) / n;
+cout<<"rata rata : "<<rataRata<<endl;
+
+void cetakDataTotal(int a[],int n){
+    if(n == 0){
+        cout<<"array kosong"<<endl;
+        return;
+    }
+}
+
+int total=0;
+for(int i=o i<n; i++){
+    total +=a[i];
+}
+cout<<"total : "<<total<<endl;
