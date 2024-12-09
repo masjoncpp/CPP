@@ -5,6 +5,7 @@ void isidata(int a[], int *n);
 void printdata(int a[], int n);
 void cariData(int a[], int n, int cari);
 void cetakDataTerbesar(int a[], int n);
+void cetakDataTerkecil(int a[], int n); 
 void cetakDataRataRata(int a[], int n);
 void cetakDataTotal(int a[], int n);
 
@@ -18,6 +19,7 @@ int main() {
     int data_dicari = 10;
     cariData(data, jml, data_dicari);
     cetakDataTerbesar(data, jml);
+    cetakDataTerkecil(data, jml); 
     cetakDataRataRata(data, jml);
     cetakDataTotal(data, jml);
     return 0;
@@ -71,6 +73,21 @@ void cetakDataTerbesar(int a[], int n) {
         }
     }
     cout << "Data terbesar: " << terbesar << endl;
+}
+
+void cetakDataTerkecil(int a[], int n) {
+    if (n == 0) {
+        cout << "Array kosong" << endl;
+        return;
+    }
+
+    int terkecil = a[0];
+    for (int i = 1; i < n; i++) {
+        if (a[i] < terkecil) {
+            terkecil = a[i];
+        }
+    }
+    cout << "Data terkecil: " << terkecil << endl;
 }
 
 void cetakDataRataRata(int a[], int n) {
