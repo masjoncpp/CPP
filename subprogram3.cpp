@@ -33,11 +33,6 @@ void cariData(int a[], int n, int cari) {
         }
     }
 
-    if (ketemu) {
-        cout << "Data ditemukan: " << endl;
-    } else {
-        cout << "Data tidak ditemukan" << endl;
-    }
 }
 
 void isidata(int a[], int *n) {
