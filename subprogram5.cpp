@@ -1,10 +1,12 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 void isi_data(string list_mhs[], int *n);
 void print_data(const string list_mhs[], int n);
 bool cari_data(const string list_mhs[], int n, const string &cari);
 int jumlah_data(int n);
+void bubble_sort(string list_mhs[], int n);
 
 int main() {
     const int MAX_MHS = 100; 
@@ -18,8 +20,9 @@ int main() {
         cout << "2. Print Data\n";
         cout << "3. Cari Data\n";
         cout << "4. Print Jumlah Data\n";
-        cout << "5. Selesai\n";
-        cout << "Pilih opsi (1-5): ";
+        cout << "5. Urutkan Data\n";
+        cout << "6. Selesai\n";
+        cout << "Pilih opsi (1-6): ";
         cin >> pilihan;
 
         switch (pilihan) {
@@ -44,12 +47,16 @@ int main() {
                 cout << "Jumlah data: " << jumlah_data(jml) << endl;
                 break;
             case 5:
+                bubble_sort(list_mhs, jml);
+                cout << "Data telah diurutkan.\n";
+                break;
+            case 6:
                 cout << "Program selesai.\n";
                 break;
             default:
                 cout << "Pilihan tidak valid. Silakan coba lagi.\n";
         }
-    } while (pilihan != 5);
+    } while (pilihan != 6);
 
     return 0;
 }
@@ -83,4 +90,14 @@ bool cari_data(const string list_mhs[], int n, const string &cari) {
 
 int jumlah_data(int n) {
     return n; 
+}
+
+void bubble_sort(string list_mhs[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (list_mhs[j] > list_mhs[j + 1]) {
+                swap(list_mhs[j], list_mhs[j + 1]);
+            }
+        }
+    }
 }
